@@ -1,0 +1,14 @@
+package com.academyinfo.academy.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.academyinfo.academy.service.AcademyService;
+
+public interface AcademyController {
+	
+	private AcademyService academyService;
+	
+	@GetMapping("/addAcademy")
+	public String academySaveFomr();
+	
+}

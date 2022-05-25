@@ -1,0 +1,51 @@
+package com.sql.board.dto;
+
+import com.sql.board.entity.academy;
+
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class academyRequestDto {
+	
+	private String id;
+	
+	private String pwd;
+	
+	private String aName;
+	
+	private String phone;
+	
+	private String email;
+	
+	private String companyNum;
+	
+	private String address;
+	
+	private String location;
+	
+	private int grade;
+	
+	private int totalscore;
+	
+	private int reviewcount;
+	
+	public academy toEntity() {
+		return academy.builder()
+				.id(id)
+				.pwd(pwd)
+				.aName(aName)
+				.phone(phone)
+				.email(email)
+				.companyNum(companyNum)
+				.address(address)
+				.location(location)
+				.grade(grade)
+				.totalscore(totalscore)
+				.reviewcount(reviewcount)
+				.build();
+	}
+
+}

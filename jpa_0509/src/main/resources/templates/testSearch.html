@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/testSearch.css}" />
+
+</head>
+<body>
+
+<!-- <div class="form-group"> -->
+<!--     <label>지역</label></br> -->
+<!--     <input class="position-checkbox" type="checkbox" id="101" value="101">서울</input> -->
+<!--     <input class="position-checkbox" type="checkbox" id="102" value="102">부산</input> -->
+<!--     <input class="position-checkbox" type="checkbox" id="103" value="103">대구</input> -->
+<!--     <input class="position-checkbox" type="checkbox" id="104" value="104">인천</input> -->
+<!--     <input class="position-checkbox" type="checkbox" id="105" value="105">광주</input> -->
+<!--     <input class="position-checkbox" type="checkbox" id="106" value="106">대전</input> -->
+<!--     <input class="position-checkbox" type="checkbox" id="107" value="107">울산</input> -->
+<!--     <input type="submit"> -->
+<!-- </div> -->
+
+<div class="search_area">
+	<form action="/search/check" method="get" id="searchWord">
+		<div class="search_div1">
+			<ul>
+				<li class="search_li">분야 : </li>
+				<li class="chack_li">
+					<input type="checkbox" id="201" name="attract" value="201">
+					<label for="201">외국어</label>
+				</li>
+				<li class="chack_li">
+					<input type="checkbox" id="202" name="attract" value="202">
+					<label for="202">스포츠</label>
+				</li>
+				<li class="chack_li">
+					<input type="checkbox" id="203" name="attract" value="203">
+					<label for="203">예술</label>
+				</li>
+			</ul>
+		</div>
+		<div class="search_div2">
+			<ul>
+				<li class="search_li">지역 : </li>
+			</ul>
+			<ul>
+				<li>
+					<input type="checkbox" id="101" name="area" value="101">
+					<label for="101">서울</label>
+				</li>
+				<li>
+					<input type="checkbox" id="102" name="area" value="102">
+					<label for="102">부산</label>
+				</li>
+				<li>
+					<input type="checkbox" id="103" name="area" value="103">
+					<label for="103">대구</label>
+				</li>
+				<li>
+					<input type="checkbox" id="104" name="area" value="104">
+					<label for="104">인천</label>
+				</li>
+				<li>
+					<input type="checkbox" id="105" name="area" value="105">
+					<label for="105">광주</label>
+				</li>
+				<li>
+					<input type="checkbox" id="106" name="area" value="106">
+					<label for="106">대전</label>
+				</li>
+				<li>
+					<input type="checkbox" id="107" name="area" value="107">
+					<label for="107">울산</label>
+				</li>
+			</ul>
+		</div>
+		<div class="search_box">
+			<select name="searchWord">
+				<option>선택</option>
+				<option value="address">지역</option>
+				<option value="category">분야</option>
+			</select> 
+			<input type="text" value="" name="searchWord" />
+			<input type="button" onclick="getSearchList()" class="btn-btn-outline-primary mr-2" value="검색">
+		</div>
+	</form>
+</div>
+
+<!-- <div> -->
+<!-- 	<div>지역</div> -->
+<!-- 	<div class="form-check form-check-inline"> -->
+<!-- 		<input type="checkbox" value="SEOUL" class="form-check-input" id="regions1" name="regions"> -->
+<!-- 		<input type="hidden" name="_regions" value="on"> -->
+<!-- 		<label for="regions1" class="form-check-label">서울</label> -->
+<!-- 	</div> -->
+<!-- 	<div class="form-check form-check-inline"> -->
+<!-- 		<input type="checkbox" value="BUSAN" class="form-check-input" id="regions2" name="regions"> -->
+<!-- 		<input type="hidden" name="_regions" value="on"> -->
+<!-- 		<label for="regions2" class="form-check-label">부산</label> -->
+<!-- 	</div> -->
+<!-- 	<div class="form-check form-check-inline"> -->
+<!-- 		<input type="checkbox" value="JEJU" class="form-check-input" id="regions3" name="regions"> -->
+<!-- 		<input type="hidden" name="_regions" value="on"> -->
+<!-- 		<label for="regions3" class="form-check-label">제주</label> -->
+<!-- 	</div> -->
+<!-- </div> -->
+	<div id="wrap">
+        <div class = "local_area">
+            <div class ="local" >
+                <ul class="list">
+                    <li><button onclick="btnClick_Seoul()">서울</button></li>
+                    <li><button  onclick="btnClick_Busan()">부산</button></li>
+                </ul>
+            </div>
+            <div class ="area">
+                <ul class="list" id ="btn_Seoul">
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울">전체
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울종로구">서울종로구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label> 
+                            <input type="hidden" value="서울중구">서울중구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울용산구">서울용산구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울성동구">서울성동구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울광진구">서울광진구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울동대문구">서울동대문구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울중랑구">서울중랑구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울성북구">서울성북구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울강북구">서울강북구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울도봉구">서울도봉구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울노원구">서울노원구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울은평구">서울은평구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울서대문구">서울서대문구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울마포구">서울마포구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울양천구">서울양천구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울강서구">서울강서구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울구로구">서울구로구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울금천구">서울금천구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울영등포구">서울영등포구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울동작구">서울동작구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울관악구">서울관악구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울서초구">서울서초구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울강남구">서울강남구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울송파구">서울송파구
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            <input type="hidden" value="서울강동구">서울강동구
+                        </label>
+                    </li>
+                </ul>
+                <ul class="list" id ="btn_Busan">
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            전체
+                            <input type="hidden" value="부산">
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            부산사하구
+                            <input type="hidden" value="부산사하구">
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <label>
+                            부산사상구
+                            <input type="hidden" value="부산사상구">
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+         <form action="/keyword/search2" method="GET">
+    		<div>
+        		<input name="searchType" type="text" placeholder="검색어를 입력해주세요">
+    		</div>
+    		<button>검색하기</button>
+		</form>
+        <form action="/keyword/search" method="GET">
+    		<div>
+        		<input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+    		</div>
+    		<button>검색하기</button>
+		</form>
+		<form action="/keyword/search" method="GET">
+			<div class="input-group" id="adv-search">
+				<select id="keyword" class="form-control" style="width: 100px;">
+					<option value="">전체</option>
+					<option value="address">지역</option>
+					<option value="category">분야</option>
+				</select> 
+				<input type="text" name="keyword" class="form-control"
+					placeholder="키워드를 입력해 주세요." style="width: 300px;" />
+				<button type="button" class="btn btn-primary">
+					<span aria-hidden="true" class="glyphicon glyphicon-search">검색</span>
+				</button>
+			</div>
+		</form>
+		
+
+		
+    <table border="1" align="center" width="80%">
+        <tr align="center" bgcolor="lightgreen">
+            <td><b>사진</b></td>
+            <td><b>강의명</b></td>
+            <td><b>키워드</b></td>
+            <td><b>강의기간(시작)</b></td>
+            <td><b>강의기간(끝)</b></td>
+            <td><b>강의평점</b></td>
+            <td><b>금액</b></td>
+            <td><b>학원</b></td>
+            <td><b>메달</b></td>
+        </tr>
+        <tr align="center" th:each = "keyword_class : ${listKeyword}" >
+            <td ></td>
+            <td th:text ="${keyword_class.c_Name}"></td>
+            <td th:text ="${keyword_class.category}"></td>
+            <td th:text ="${keyword_class.s_Period}"></td>
+            <td th:text ="${keyword_class.e_Period}"></td>
+            <td th:text ="${keyword_class.score}"></td>
+            <td th:text ="${keyword_class.price}"></td>
+            <td th:text ="${keyword_class.a_Name}"></td>
+        </tr>
+    </table>
+       
+    </div>
+     <script th:src="@{/js/testSearch.js}"></script>
+</body>
+</html>

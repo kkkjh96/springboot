@@ -1,0 +1,33 @@
+package com.academyinfo.academy.service;
+
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.academyinfo.academy.domain.repository.AcademyRepository;
+import com.academyinfo.academy.dto.AcademyRequestDto;
+import com.academyinfo.member.domain.entity.MemberEntity;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class AcademyServiceImpl implements AcademyService {
+	private AcademyRepository academyRepository;
+	
+	public Integer saveAcademy(AcademyRequestDto academyDto) {
+		
+		return academyRepository.save(academyDto.toEntity()).getAindex();
+	}
+	
+	@Transactional
+	public void saveAcademyInfo(MemberEntity mindex, AcademyRequestDto academyDto) {
+		
+		Optional<MemberEntity> memberEntityWrapper = memberRepository.findById(id);
+		MemberEntity member = memberEntityWrapper.get();
+		academyDto.setMindex(member);
+		
+		return academyRepository.save(academyDto.toEntity()).getMindex();
+	}
+
+}

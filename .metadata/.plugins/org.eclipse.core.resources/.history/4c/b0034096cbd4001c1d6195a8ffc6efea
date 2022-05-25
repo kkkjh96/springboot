@@ -1,0 +1,11 @@
+package com.academyinfo.academy.controller;
+
+import com.academyinfo.academy.service.AcademyService;
+
+public interface AcademyController {
+	
+	private final AcademyService academyService;
+	
+	@GetMapping("/Form/addRorm")
+	
+}

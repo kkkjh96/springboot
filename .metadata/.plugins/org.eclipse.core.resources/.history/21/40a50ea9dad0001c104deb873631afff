@@ -1,0 +1,10 @@
+package com.sql.board.entity;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface academyRepository extends JpaRepository<academy, String> {
+
+	List<academy> findByTitleContaining(String keyword);
+}

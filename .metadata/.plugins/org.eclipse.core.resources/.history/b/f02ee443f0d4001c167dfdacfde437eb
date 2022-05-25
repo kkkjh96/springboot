@@ -1,0 +1,11 @@
+package com.academyinfo.academy.controller;
+
+import com.academyinfo.academy.dto.AcademyRequestDto;
+
+public interface AcademyController {
+	
+	
+//	public String academySaveForm(Model model);
+	public String academySaveForm(AcademyRequestDto academyDto);
+	
+}

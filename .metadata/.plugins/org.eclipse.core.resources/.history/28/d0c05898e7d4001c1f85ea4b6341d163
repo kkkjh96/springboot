@@ -1,0 +1,11 @@
+package com.academyinfo.academy.controller;
+
+import org.springframework.ui.Model;
+
+public interface AcademyController {
+	
+	
+//	public String academySaveForm(Model model);
+	public String academySaveForm(Model model);
+	
+}

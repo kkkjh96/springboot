@@ -1,0 +1,13 @@
+package com.sql.board.controller;
+
+
+@RestController
+@RequestMapping("/api")
+public class academyApiController {
+	
+	@GetMapping("/test")
+	public Stirng test() {
+		throw new RuntimeException("Holy! Exception...");
+	}
+
+}

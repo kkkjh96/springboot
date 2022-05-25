@@ -1,0 +1,18 @@
+package com.academyinfo.academy.domain.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.academyinfo.academy.domain.entity.AcademyEntity;
+
+public interface AcademyRepository extends JpaRepository<AcademyEntity, Integer> {
+	
+	@Query("Select academy from aindex")
+	List<AcademyEntity> findByIndex(Integer aindex);
+	
+	@Query()
+	List<AcademyEntity> findAcademyByIndex(Integer aindex);
+
+}

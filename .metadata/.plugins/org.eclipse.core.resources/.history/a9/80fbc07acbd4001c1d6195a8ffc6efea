@@ -1,0 +1,9 @@
+package com.academyinfo.academy.controller;
+
+import org.springframework.ui.Model;
+
+public interface AcademyController {
+	
+	
+	
+}

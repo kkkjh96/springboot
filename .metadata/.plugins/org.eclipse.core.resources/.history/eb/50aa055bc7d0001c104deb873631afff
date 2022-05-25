@@ -1,0 +1,46 @@
+package com.sql.board.dto;
+
+import com.sql.board.entity.academy;
+
+import lombok.Getter;
+
+@Getter
+public class academyResponseDto {
+	
+	private String id;
+	
+	private String pwd;
+	
+	private String aName;
+	
+	private String phone;
+	
+	private String email;
+	
+	private String companyNum;
+	
+	private String address;
+	
+	private String location;
+	
+	private int grade;
+	
+	private int totalscore;
+	
+	private int reviewcount;
+	
+	public academyResponseDto(academy entity) {
+		this.id = entity.getId();
+		this.pwd = entity.getPwd();
+		this.aName = entity.getAName();
+		this.phone = entity.getPhone();
+		this.email = entity.getEmail();
+		this.companyNum = entity.getCompanyNum();
+		this.address = entity.getAddress();
+		this.location = entity.getLocation();
+		this.grade = entity.getGrade();
+		this.totalscore = entity.getTotalscore();
+		this.reviewcount = entity.getReviewcount();
+	}
+
+}

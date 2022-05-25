@@ -1,0 +1,5 @@
+package com.JPA_Specification.domain;
+
+public class Post {
+
+}

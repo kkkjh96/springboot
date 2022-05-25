@@ -1,0 +1,14 @@
+package com.academyinfo.academy.service;
+
+import com.academyinfo.academy.dto.AcademyRequestDto;
+import com.academyinfo.member.domain.entity.MemberEntity;
+
+
+
+
+public interface AcademyService {
+
+	public MemberEntity savePost(Long mindex, AcademyRequestDto academyDto);
+	
+
+}

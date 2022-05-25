@@ -1,0 +1,5 @@
+package com.sql.exception;
+
+public class CustomException {
+
+}

@@ -1,0 +1,33 @@
+package com.academyinfo.academy.controller;
+
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.academyinfo.academy.service.AcademyService;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@RequestMapping("/academy")
+@Controller
+public class AcademyControllerImpl implements AcademyController {
+	private AcademyService academyService;
+	
+	@GetMapping("/post")
+	public String academyWrite(Model model) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		Long mindex = ((UserDetails)principal).getUsername();
+		
+		model.addAttribute("mindex", mindex);
+		
+		return "form/addForm";
+	}
+	
+	
+	
+	
+}

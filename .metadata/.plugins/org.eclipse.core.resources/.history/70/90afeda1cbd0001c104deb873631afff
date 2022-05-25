@@ -1,0 +1,46 @@
+package com.sql.board.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+//@Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
+@Table(name="academy")
+public class academy {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer aIndex;
+	@Column
+	private String id;
+	@Column
+	private String pwd;
+	@Column
+	private String aName;
+	@Column
+	private String phone;
+	@Column
+	private String email;
+	@Column
+	private String companyNum;
+	@Column
+	private String address;
+	@Column
+	private String location;
+	@Column
+	private Integer grade;
+	@Column
+	private Integer totalscore;
+	@Column
+	private Integer reviewcount;
+	
+}

@@ -1,0 +1,19 @@
+package com.academyinfo.academy.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.academyinfo.academy.service.AcademyService;
+
+import lombok.RequiredArgsConstructor;
+
+@Controller
+@RequiredArgsConstructor
+public interface AcademyController {
+	
+	private final AcademyService academyService;
+	
+	
+	public String academySaveForm();
+	
+}

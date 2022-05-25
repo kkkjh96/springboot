@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=JPA_05/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.jpa05.service{JpaService.java[JpaService" modifiers="513" timestamp="1651117249580"/>
+    <typeInfo handle="=Arduino_Jpa/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.arduino.service{ArduinoService.java[ArduinoService" modifiers="513" timestamp="1651125080284"/>
+    <typeInfo handle="=Arduino_Jpa/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.arduino.controller{ArduinoController.java[ArduinoController" modifiers="513" timestamp="1651124979035"/>
+    <typeInfo handle="=STS-gradle/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.sts.service{stsService.java[stsService" modifiers="513" timestamp="1651132699165"/>
+    <typeInfo handle="=board/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.board.service{BoardService.java[BoardService" modifiers="513" timestamp="1651213119684"/>
+</typeInfoHistroy>

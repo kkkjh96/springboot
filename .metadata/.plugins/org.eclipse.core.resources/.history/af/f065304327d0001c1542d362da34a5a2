@@ -1,0 +1,43 @@
+package com.sql.board.entity;
+
+import lombok.AccessLevel;
+
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
+public class academy {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int aIndex;
+	
+	private String id;
+	
+	private String pwd;
+	
+	private String aName;
+	
+	private String phone;
+	
+	private String email;
+	
+	private String companyNum;
+	
+	private String address;
+	
+	private String location;
+	
+	private int grade;
+	
+	private int totalscore;
+	
+	private int reviewcount;
+	
+	@Builder
+	public academy(String id, String pwd, String aName, 
+			String phone, String email, String company, String address, String lacation, 
+			int garde, int totalscore, int reviewcount) {
+		
+	}
+	
+}

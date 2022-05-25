@@ -1,0 +1,12 @@
+package com.academyinfo.academy.controller;
+
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.ui.Model;
+
+public interface AcademyController {
+	
+	
+	public String academyWrite(Model model);
+	
+}

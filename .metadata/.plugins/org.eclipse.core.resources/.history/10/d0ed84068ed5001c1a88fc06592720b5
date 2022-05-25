@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<table border="1" align="center" width="80%">
+	        <tr align="center" bgcolor="lightgreen">
+	            <td><b>학원명</b></td>
+	            <td><b>학원 등급</b></td>
+	            <td><b>학원 지역</b></td>
+	            <td><b>학원 주소</b></td>
+	            <td><b>학원(사업자)등록 번호</b></td>
+	            <td><b>학원 소개</b></td>
+	            
+	        </tr>
+	        <tr align="center" th:each = "list : ${listFilter}" >
+	            <td th:text ="${"></td>
+	            <td th:text ="${listFilter.name}"></td>
+	            <td th:text ="${listFilter.category}"></td>
+	            <td th:text ="${listFilter.startperiod}"></td>
+	            <td th:text ="${listFilter.endperiod}"></td>
+	            <td th:text ="${#numbers.formatDecimal(listFilter.score, 1, 2)}"></td>
+	       </tr>
+    	</table>
+		
+	</div>
+</body>
+</html>

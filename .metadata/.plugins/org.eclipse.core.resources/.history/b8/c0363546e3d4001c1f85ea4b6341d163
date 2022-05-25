@@ -1,0 +1,12 @@
+package com.academyinfo.academy.service;
+
+import com.academyinfo.academy.dto.AcademyRequestDto;
+
+
+
+public interface AcademyService {
+
+	public Integer saveAcademy(AcademyResponseDto academyDto);
+	
+
+}

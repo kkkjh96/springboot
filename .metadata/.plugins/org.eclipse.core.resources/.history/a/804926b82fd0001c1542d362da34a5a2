@@ -1,0 +1,5 @@
+package com.sql.exception;
+
+public enum ErrorCode {
+
+}

@@ -1,0 +1,33 @@
+package com.sql.board.dto;
+
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class academyRequestDto {
+	
+	private String id;
+	
+	private String pwd;
+	
+	private String aName;
+	
+	private String phone;
+	
+	private String email;
+	
+	private String companyNum;
+	
+	private String address;
+	
+	private String location;
+	
+	private int grade;
+	
+	private int totalscore;
+	
+	private int reviewcount;
+
+}

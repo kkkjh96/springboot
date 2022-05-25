@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script src="/js/scriptTest.js" type="text/javascript"></script>
+<meta charset="UTF-8">
+<title>Country JPA</title>
+</head>
+<body>
+	<h1>Country JPA</h1>
+	<div th:text="${message}"></div>
+	<img src="/image/duke3.png" width="200" height="200" />
+	<br>
+	<input type="button" name="테스트" value="테스트" onClick="test()" />
+	
+	<table border="1" align="center" width="80%">
+		<tr align="center" bgcolor="lightgreen">
+			<td><b>아이디</b></td>
+			<td><b>나라</b></td>
+		</tr>
+		<tr align="center" th:each="country : ${listCountries}">
+			<td th:text="${country.id}"></td>
+			<td th:text="${country.name}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

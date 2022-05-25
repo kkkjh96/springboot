@@ -1,0 +1,46 @@
+package com.academyinfo.academy.controller;
+
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.academyinfo.academy.dto.AcademyRequestDto;
+import com.academyinfo.academy.service.AcademyService;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@RequestMapping("/academy")
+@Controller
+public class AcademyControllerImpl implements AcademyController {
+	private AcademyService academyService;
+	
+//	@RequestMapping("/addForm")
+//	public String academySaveForm(Model model)
+//	{
+//		model.addAttribute("addForm", new AcademyResponseDto());
+//		return "/form/addForm";
+//	}
+	
+	@GetMapping("/addForm")
+	public String academySaveForm(AcademyRequestDto academyDto) {
+		academyService.saveAcademy(academyDto);
+		
+		return "form/addForm";
+	}
+	
+	@PostMapping("/addForm/post")
+	public String academySave(AcademyRequestDto academyDto) {
+		
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		Long mindex = ((UserDetails)principal).getUsername();
+		
+		academyService.saveAcademyInfo(mindex, academyDto);
+		
+		return "form/list";
+	}
+	
+	
+}

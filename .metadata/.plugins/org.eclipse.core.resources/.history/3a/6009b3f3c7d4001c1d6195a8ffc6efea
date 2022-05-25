@@ -1,0 +1,14 @@
+package com.academyinfo.academy.service;
+
+import java.util.List;
+
+import com.academyinfo.academy.domain.entity.AcademyEntity;
+
+public interface AcademyService {
+
+	public void saveAcademy(AcademyEntity academy);
+	
+	public AcademyEntity academyView(Integer aindex);
+	
+	public List<AcademyEntity> allAcademyView();
+}

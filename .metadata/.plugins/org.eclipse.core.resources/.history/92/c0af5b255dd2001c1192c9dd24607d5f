@@ -1,0 +1,17 @@
+package com.study.board.service;
+
+import java.util.List;
+
+import com.study.paging.CommonParams;
+
+public interface BoardMapper{
+	/**
+	 * 게시글 수 조회
+	 */
+	int count(final CommonParmas params);
+	
+	/**
+	 * 게시글 리스트 조회
+	 */
+	List<BoardresponseDto> findAll(final CommonParams params);
+}

@@ -1,0 +1,7 @@
+package com.sql.board.entity;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface academyRepository extends JpaRepository<academy, String> {
+
+}

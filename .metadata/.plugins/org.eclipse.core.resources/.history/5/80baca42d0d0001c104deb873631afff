@@ -1,0 +1,48 @@
+package com.sql.board.model;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.sql.board.dto.academyDto;
+import com.sql.board.entity.academy;
+import com.sql.board.entity.academyRepository;
+
+import lombok.AllArgsConstructor;
+import java.util.ArrayList;
+import java.util.List;
+import javax.transaction.Transactional;
+
+@Service
+@AllArgsConstructor
+public class academyService {
+
+	private final academyRepository academyRepository;
+	
+	@Transactional
+	public List<academyDto> getacademylist(){
+		List<academy> academyEntities = academyRepository.findAll();
+		List<academyDto> academyDtoList = new ArreyList<>();
+		
+		for(academy academyEntity : academyEntities) {
+			academyDto academyDto = academyDto.builder()
+					.id(academyEntity.getId())
+					.pwd(academyEntity.getPwd())
+					.aName(academyEntity.getAName())
+					.phone(academyEntity.getPhone())
+					.email(academyEntity.getEmail())
+					.companyNum(academyEntity.getCompanyNum())
+					.address(academyEntity.getAddress())
+					.location(academyEntity.getLocation())
+					.grade(academyEntity.getGrade())
+					.totalscore(academyEntity.getTotalscore())
+					.reviewcount(academyEntity.getTotalscore())
+					.build();
+			
+			academyDtoList.add(academyDto);
+		}
+		return academyList;
+	}
+
+	
+}

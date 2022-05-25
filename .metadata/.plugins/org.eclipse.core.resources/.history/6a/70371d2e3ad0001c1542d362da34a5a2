@@ -1,0 +1,15 @@
+package com.sql.board.controller;
+
+@Controller
+@RequestMapping("/board")
+public class academyPageController {
+	
+	/**
+	 * 게시글 리스트 페이지 
+	 */
+	@GetMapping("/list")
+	public String openBoardList() {
+		return "board/list";
+	}
+
+}

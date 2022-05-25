@@ -1,0 +1,31 @@
+package com.JPA_Specification.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+@Getter
+public class Post {
+
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	private String title;
+	
+	private String tag;
+	
+	private int likes;
+	
+	protected Post() {
+		
+	}
+	
+	@Builder
+	public Post(String title, String tag, int likes) {
+		this.title = title;
+		this.tag = tag;
+		this.likes = likes;
+	}
+}

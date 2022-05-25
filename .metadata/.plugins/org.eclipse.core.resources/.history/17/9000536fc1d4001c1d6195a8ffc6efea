@@ -1,0 +1,8 @@
+package com.academyinfo.academy.service;
+
+import com.academyinfo.academy.domain.entity.AcademyEntity;
+
+public interface AcademyService {
+
+	public void saveAcademy(AcademyEntity academy);
+}

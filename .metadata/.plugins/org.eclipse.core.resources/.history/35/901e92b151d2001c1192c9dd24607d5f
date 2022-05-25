@@ -1,0 +1,5 @@
+package com.study.paging;
+
+public class CommonParams {
+
+}

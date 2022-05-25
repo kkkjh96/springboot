@@ -1,0 +1,46 @@
+@charset "UTF-8";
+  *{ padding: 0; margin: 0; box-sizing: border-box;}
+        #wrap
+        {
+            background-color: aqua;
+            width: 1000px;
+            height: 400px;
+        }
+        .local_area::after
+        {
+            float: both;
+        }
+        .local
+        {
+            width: 400px;
+            height: 400px;
+            border: 1px solid;
+            display: inline-block;
+            float: left;
+        }
+        .area
+        {
+            width: 600px;
+            height: 400px;
+            border: 1px solid;
+            display: inline-block;
+            float: right; 
+        }
+        .list li
+        {
+            list-style: none;
+        }
+        
+        .search 
+        {
+            display:inline-block;
+        }
+        
+        #btn_Seoul
+        {
+            display: none;
+        }
+        #btn_Busan
+        {
+            display: none;
+        }

@@ -1,0 +1,11 @@
+package com.sql.board.dto;
+
+import lombok.AccessLevel;
+
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class academyRequestDto {
+	
+	private 
+
+}

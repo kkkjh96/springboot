@@ -1,0 +1,9 @@
+package com.academyinfo.academy.controller;
+
+
+public interface AcademyController {
+	
+	
+	public String academySaveForm();
+	
+}

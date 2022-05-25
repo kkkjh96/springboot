@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="academy.html" th:action th:object="${academy}" method="post">
+		<div>
+			<label for="academyName">학원명</label>
+			<input type="text" th:field="{academyName}" class="form-control" placeholder="학원명을 입력하세요">
+		</div>
+		<div>
+			<label for="info">학원 정보</label>
+			<input type="text" th:field="{info}" class="form-control" placeholder="학원 정보를 입력하세요">
+		</div>
+	</form>
+</body>
+</html>

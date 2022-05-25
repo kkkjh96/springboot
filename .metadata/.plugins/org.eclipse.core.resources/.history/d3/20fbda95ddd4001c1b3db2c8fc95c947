@@ -1,0 +1,18 @@
+package com.academyinfo.academy.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@RequestMapping("/academy")
+@Controller
+public class AcademyControllerImpl implements AcademyController {
+	
+	@PutMapping("/academy/addForm")
+	public String academySaveForm() {
+		return "/form/addForm";
+	}
+}

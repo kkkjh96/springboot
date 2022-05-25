@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+		<form action="/search/check" method="GET">
+    		<div>
+        		<input name="searchWord" type="text" placeholder="검색어를 입력해주세요">
+    		</div>
+    		<button>검색하기</button>
+		</form>
+		<table border="1" align="center" width="80%">
+        <tr align="center" bgcolor="lightgreen">
+            <td><b>학원명</b></td>
+            <td><b>학원번호</b></td>
+            <td><b>이메일</b></td>
+            <td><b>주소</b></td>
+            <td><b>지역번호</b></td>
+            <td><b>등급</b></td>
+            <td><b>총점</b></td>
+            <td><b>리뷰수</b></td>
+        </tr>
+        <tr align="center" th:each = "searchWord_academy : ${listSearchWord}" >
+            <td th:text ="${searchWord_academy.a_name1}"></td>
+            <td th:text ="${searchWord_academy.phone}"></td>
+            <td th:text ="${searchWord_academy.email}"></td>
+            <td th:text ="${searchWord_academy.address}"></td>
+            <td th:text ="${searchWord_academy.location}"></td>
+            <td th:text ="${searchWord_academy.grade}"></td>
+            <td th:text ="${searchWord_academy.totalscore}"></td>
+            <td th:text ="${searchWord_academy.reviewcount}"></td>
+        </tr>
+    </table>
+		<form action="/keyword/search2" method="GET">
+    		<div>
+        		<input name="searchType" type="text" placeholder="검색어를 입력해주세요">
+    		</div>
+    		<button>검색하기</button>
+		</form>
+		<table border="1" align="center" width="80%">
+        <tr align="center" bgcolor="lightgreen">
+            <td><b>학원명</b></td>
+            <td><b>학원번호</b></td>
+            <td><b>이메일</b></td>
+            <td><b>주소</b></td>
+            <td><b>등급</b></td>
+            <td><b>총점</b></td>
+            <td><b>리뷰수</b></td>
+        </tr>
+        <tr align="center" th:each = "searchType_academy : ${listSearchType}" >
+            <td th:text ="${searchType_academy.a_name1}"></td>
+            <td th:text ="${searchType_academy.phone}"></td>
+            <td th:text ="${searchType_academy.email}"></td>
+            <td th:text ="${searchType_academy.address}"></td>
+            <td th:text ="${searchType_academy.grade}"></td>
+            <td th:text ="${searchType_academy.totalscore}"></td>
+            <td th:text ="${searchType_academy.reviewcount}"></td>
+        </tr>
+    </table>
+		
+        <form action="/keyword/search" method="GET">
+    		<div>
+        		<input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+    		</div>
+    		<button>검색하기</button>
+		</form>
+          <table border="1" align="center" width="80%">
+        <tr align="center" bgcolor="lightgreen">
+            <td><b>사진</b></td>
+            <td><b>강의명</b></td>
+            <td><b>키워드</b></td>
+            <td><b>강의기간(시작)</b></td>
+            <td><b>강의기간(끝)</b></td>
+            <td><b>강의평점</b></td>
+            <td><b>금액</b></td>
+            <td><b>학원</b></td>
+            <td><b>상태</b></td>
+        </tr>
+        <tr align="center" th:each = "keyword_class : ${listKeyword}" >
+        	<td></td>
+            <td th:text ="${keyword_class.c_Name}"></td>
+            <td th:text ="${keyword_class.category}"></td>
+            <td th:text ="${keyword_class.s_Period}"></td>
+            <td th:text ="${keyword_class.e_Period}"></td>
+            <td th:text ="${keyword_class.score}"></td>
+            <td th:text ="${keyword_class.price}"></td>
+            <td th:text ="${keyword_class.a_Name}"></td>
+            <td th:text ="${keyword_class.c_Status}"></td>
+        </tr>
+    </table>
+</body>
+</html>

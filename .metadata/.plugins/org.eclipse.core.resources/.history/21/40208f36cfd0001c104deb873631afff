@@ -1,0 +1,58 @@
+package com.sql.board.dto;
+
+import com.sql.board.entity.academy;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+public class academyDto {
+	private Integer aIndex;
+	
+	private String id;
+	
+	private String pwd;
+	
+	private String aName;
+	
+	private String phone;
+	
+	private String email;
+	
+	private String companyNum;
+	
+	private String address;
+	
+	private String location;
+	
+	private Integer grade;
+	
+	private Integer totalscore;
+	
+	private Integer reviewcount;
+	
+	public academy toEntity() {
+		academy academyEntity = academy.builder()
+				.id(id)
+				.pwd(pwd)
+				.aName(aName)
+				.phone(phone)
+				.email(email)
+				.companyNum(companyNum)
+				.address(address)
+				.location(location)
+				.grade(grade)
+				.totalscore(totalscore)
+				.reviewcount(reviewcount)
+				.build();
+			return academyEntity;
+				
+	}
+}	
+
+

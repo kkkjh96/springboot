@@ -1,0 +1,18 @@
+package com.academyinfo.academy.controller;
+
+import org.springframework.stereotype.Controller;
+
+import com.academyinfo.academy.service.AcademyService;
+
+import lombok.RequiredArgsConstructor;
+
+
+
+public interface AcademyController {
+	
+	
+	
+	
+	public String academySaveForm();
+	
+}

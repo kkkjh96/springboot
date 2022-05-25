@@ -1,0 +1,13 @@
+package com.academyinfo.academy.service;
+
+import com.academyinfo.academy.dto.AcademyRequestDto;
+
+
+
+
+public interface AcademyService {
+
+	public int savePost(Long mindex, AcademyRequestDto academyDto);
+	
+
+}

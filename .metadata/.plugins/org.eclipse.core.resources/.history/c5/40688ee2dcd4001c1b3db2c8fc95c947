@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="/academy/addForm" th:object="${addForm}" method="post">
+		<div sec:authorize="hasRole('ROLE_COMPANY')">
+			<label for="academyName">학원명</label>
+			<input type="text" th:field=*{addFormName}" class="form-control" placeholder="학원명을 입력하세요">
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+package com.sql.board.model;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.sql.board.dto.academyRequestDto;
+import com.sql.board.dto.academyResponseDto;
+import com.sql.board.entity.academy;
+import com.sql.board.entity.academyRepository;
+import com.sql.exception.CustomException;
+import com.sql.exception.ErrorCode;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class academyService {
+
+	private final academyRepository academyRepository;
+
+	/*
+	 * 게시글 작성
+	 */
+	@Transactional
+	public String save(final academyRequestDto params) {
+		academy entity = academyRepository.save(params.toEntity());
+		return entity.getId();
+	}
+
+	/*
+	 * 게시글 리스트 조회
+	 */
+	public List<academyResponseDto> findAll() {
+		Sort sort = Sort.by(Direction.DESC, "id");
+		List<academy> list = academyRepository.findAll(sort);
+		return list.stream().map(academyResponseDto::new).collect(Collectors.toList());
+//		return (List<academy>) academyRepository.findAll();
+	}
+
+	/*
+	 * 게시글 수정
+	 */
+	@Transactional
+	public String update(final String id, final academyRequestDto params) {
+		academy entity = academyRepository.findById(id)
+				.orElseThrow(() -> new CustomException(ErrorCode.POSTS_NOT_FOUND));
+		return id;
+	}
+}

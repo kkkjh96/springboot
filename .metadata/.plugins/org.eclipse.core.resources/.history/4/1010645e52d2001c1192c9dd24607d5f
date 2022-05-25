@@ -1,0 +1,20 @@
+package com.study.paging;
+
+@Getter
+public class Pagination {
+
+	private int totalRecordCount;
+	private int totalPageCount;
+	private int startPage;
+	private int endPage;
+	private int limitStart;
+	private boolean existPrevPage;
+	private boolean exisstNextPage;
+	
+	public Pagination(int totalRecordCount, CommonParams params) {
+		if(totalRecordCount > 0) {
+			this.totalRecordCount = totalRecordCount;
+			this.calculation(params);
+		}
+	}
+}

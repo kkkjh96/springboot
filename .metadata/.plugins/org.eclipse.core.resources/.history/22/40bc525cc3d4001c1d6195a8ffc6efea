@@ -1,0 +1,5 @@
+package com.academyinfo.academy.controller;
+
+public interface AcademyController {
+
+}
